@@ -31,6 +31,7 @@ class PubTest < MiniTest::Test
     @pub1.order(@customer, @drink2)
     assert_equal(39, @customer.wallet)
     assert_equal(5001, @pub1.till)
+    assert_equal(10, @customer.drunkness_level)
   end
 
 end
