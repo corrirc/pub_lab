@@ -8,4 +8,8 @@ attr_reader :name, :till
     @drinks = drinks
   end
 
+  def drinks_count()
+    return @drinks.count
+  end
+
 end
