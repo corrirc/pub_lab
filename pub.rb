@@ -13,7 +13,7 @@ attr_reader :name, :till
   end
 
   def order(customer, drink)
-    if customer.age > 18
+    if customer.age > 18 && customer.drunkness_level <= 80
       if @drinks.include?(drink)
         customer.buy_drink(drink)
         @till += drink.price
