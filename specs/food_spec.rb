@@ -20,4 +20,7 @@ class FoodTest < MiniTest::Test
     assert_equal(3, @food1.price)
   end
 
+  def rejuvenation_level
+    assert_equal(5, @food1.rejuvenation_level)
+  end
 end
