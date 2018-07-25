@@ -49,15 +49,22 @@ class PubTest < MiniTest::Test
   def test_change_stock
     @pub1.order_drink(@customer, @drink2)
     # @pub1.change_stock(@drink2)
-    assert_equal(39, @customer.wallet)
-    assert_equal(5001, @pub1.till)
-    assert_equal(10, @customer.drunkness_level)
+    # assert_equal(39, @customer.wallet)
+    # assert_equal(5001, @pub1.till)
+    # assert_equal(10, @customer.drunkness_level)
     assert_equal(199, @pub1.stock_count(@drink2))
   end
 
   def test_total_stock_value
     result = @pub1.total_stock_value()
     assert_equal(400, result)
+  end
+
+  def test_total_stock_value_after_ordering_drinks()
+    @pub1.order_drink(@customer, @drink2)
+    @pub1.order_drink(@customer, @drink1)
+    result = @pub1.total_stock_value()
+    assert_equal(397, result)
   end
 
 end
