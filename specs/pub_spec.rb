@@ -12,6 +12,7 @@ class PubTest < MiniTest::Test
     @drink2 = Drink.new("Beer", 1)
     @drinks = [@drink1, @drink2]
     @pub1 = Pub.new("Ricky's Bar", 5000, @drinks)
+    @customer = Customer.new("John", 40, 30)
   end
 
   def test_pub_name()
@@ -25,4 +26,11 @@ class PubTest < MiniTest::Test
   def test_number_drink
     assert_equal(2, @pub1.drinks_count)
   end
+
+  def test_order
+    @pub1.order(@customer, @drink2)
+    assert_equal(39, @customer.wallet)
+    assert_equal(5001, @pub1.till)
+  end
+
 end
