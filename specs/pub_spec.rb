@@ -18,7 +18,9 @@ class PubTest < MiniTest::Test
     assert_equal("Ricky's Bar", @pub1.name)
   end
 
-
+  def test_till_amount
+    assert_equal(5000, @pub1.till)
+  end
 
 
 end
