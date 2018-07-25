@@ -36,4 +36,10 @@ attr_reader :name, :till
     return @stock[drink]
   end
 
+  def total_stock_value
+    total = 0
+    @stock.each{|drink,stock| total+=(stock * drink.price) }
+    return total
+  end
+
 end
